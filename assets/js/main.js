@@ -20,7 +20,7 @@ const products = [
     descEn: "Two bags of our Fleur de Sel. Perfect as a gift or to always have at home.",
     price: 160,
     weight: "2 × 250g",
-    img: "assets/images/producto-flor-de-sal.jpg",
+    img: "assets/images/producto-pack-doble.png",
     tag: "MEJOR PRECIO"
   },
   {
@@ -31,7 +31,7 @@ const products = [
     descEn: "For chefs and restaurants. Special wholesale price. Laguna de Cuyutlán in every dish.",
     price: 450,
     weight: "6 × 250g",
-    img: "assets/images/producto-flor-de-sal.jpg",
+    img: "assets/images/producto-caja-seis.png",
     tag: "MAYOREO"
   }
 ];
