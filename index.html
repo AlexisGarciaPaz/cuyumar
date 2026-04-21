@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ─── SEO ─── -->
+  <title>CUYUMAR — Sal Artesanal de Colima, México</title>
+  <meta name="description" content="Sal artesanal cosechada a mano en la Laguna de Cuyutlán, Colima. Flor de sal 100% natural, sin aditivos, rica en 84+ minerales. Envíos a toda la República Mexicana.">
+  <meta name="keywords" content="sal artesanal, flor de sal, sal de Colima, sal marina, sal natural, Cuyutlán, México, artisan salt">
+  <meta name="author" content="Cuyumar">
+  <link rel="canonical" href="https://cuyumar.com.mx/">
+
+  <!-- ─── Open Graph ─── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://cuyumar.com.mx/">
+  <meta property="og:title"       content="CUYUMAR — Sal Artesanal de Colima">
+  <meta property="og:description" content="Flor de sal cosechada a mano en las salinas de Cuyutlán. Pureza mineral, sabor auténtico, tradición centenaria.">
+  <meta property="og:image"       content="https://cuyumar.com.mx/assets/images/producto-flor-de-sal.jpg">
+  <meta property="og:locale"      content="es_MX">
+  <meta property="og:site_name"   content="Cuyumar">
+
+  <!-- ─── Twitter Card ─── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@cuyumarsalinas">
+  <meta name="twitter:title"       content="CUYUMAR — Sal Artesanal de Colima">
+  <meta name="twitter:description" content="Flor de sal cosechada a mano en las salinas de Cuyutlán. Del Pacífico a tu mesa.">
+  <meta name="twitter:image"       content="https://cuyumar.com.mx/assets/images/producto-flor-de-sal.jpg">
+
+  <!-- ─── Schema.org ─── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Cuyumar",
+    "description": "Sal artesanal cosechada a mano en la Laguna de Cuyutlán, Colima, México.",
+    "url": "https://cuyumar.com.mx",
+    "logo": "https://cuyumar.com.mx/assets/images/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Colima",
+      "addressCountry": "MX"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "contacto@cuyumar.com.mx",
+      "contactType": "customer service",
+      "availableLanguage": ["Spanish", "English"]
+    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Flor de Sal Artesanal 250g",
+        "price": "85",
+        "priceCurrency": "MXN"
+      },
+      {
+        "@type": "Offer",
+        "name": "Flor de Sal Pack Doble 2×250g",
+        "price": "160",
+        "priceCurrency": "MXN"
+      },
+      {
+        "@type": "Offer",
+        "name": "Flor de Sal Caja de 6",
+        "price": "450",
+        "priceCurrency": "MXN"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ─── Favicon placeholder ─── -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🧂%3C/text%3E%3C/svg%3E">
+
+  <!-- ─── Stylesheets ─── -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+
+<!-- SKIP LINK (accesibilidad teclado) -->
+<a class="skip-link" href="#products">Ir al contenido principal</a>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">CUYUMAR</a>
+  <ul class="nav-links">
+    <li><a href="#origin"   data-es="Origen"     data-en="Origin">Origen</a></li>
+    <li><a href="#benefits" data-es="Beneficios" data-en="Benefits">Beneficios</a></li>
+    <li><a href="#products" data-es="Productos"  data-en="Products">Productos</a></li>
+    <li><a href="#contact"  data-es="Contacto"   data-en="Contact">Contacto</a></li>
+  </ul>
+  <button class="lang-toggle" id="langToggle">EN</button>
+</nav>
+
+<!-- CART BADGE -->
+<div class="cart-badge" id="cartBadge" onclick="toggleCart()">
+  🛒 <span data-es="Carrito" data-en="Cart">Carrito</span>
+  <div class="cart-count" id="cartCount">0</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- HERO                                        -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-salt-crystal"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow"
+       data-es="Sal Artesanal · Colima, México"
+       data-en="Artisan Salt · Colima, Mexico">Sal Artesanal · Colima, México</p>
+    <h1 class="hero-title" aria-label="CUYUMAR"><span class="hero-letter" style="--i:1">C</span><span class="hero-letter" style="--i:2">U</span><span class="hero-letter" style="--i:3">Y</span><em class="hero-letter" style="--i:4">U</em><span class="hero-letter" style="--i:5">M</span><span class="hero-letter" style="--i:6">A</span><span class="hero-letter" style="--i:7">R</span></h1>
+    <p class="hero-subtitle"
+       data-es="Del mar al paladar"
+       data-en="From the sea to your palate">Del mar al paladar</p>
+    <p class="hero-desc"
+       data-es="Sal de Colima cosechada a mano de las costas del Pacífico. Pureza mineral, sabor auténtico, tradición centenaria."
+       data-en="Hand-harvested salt from Colima's Pacific coast. Mineral purity, authentic flavor, centuries of tradition.">
+      Sal de Colima cosechada a mano de las costas del Pacífico. Pureza mineral, sabor auténtico, tradición centenaria.
+    </p>
+    <div class="hero-cta">
+      <a href="#products" class="btn-primary"><span data-es="Comprar Ahora" data-en="Shop Now">Comprar Ahora</span></a>
+      <a href="#origin"   class="btn-ghost"   data-es="Nuestra Historia" data-en="Our Story">Nuestra Historia</a>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator">
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="parallax-stripe"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ORIGIN                                      -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="origin">
+  <div class="origin-bg-text">SAL</div>
+  <div class="origin-container">
+    <div class="origin-left reveal-left">
+      <p class="section-label" data-es="Nuestro Origen" data-en="Our Origin">Nuestro Origen</p>
+      <h2 class="origin-title"
+          data-es="Nacida en las<br><em>costas de Colima</em>"
+          data-en="Born on the<br><em>coast of Colima</em>">
+        Nacida en las<br><em>costas de Colima</em>
+      </h2>
+      <p class="origin-text"
+         data-es="Las salinas de Colima llevan siglos produciendo sal bajo el sol del Pacífico. Cuyumar es la expresión más pura de ese legado: cristales formados naturalmente, sin aditivos, sin procesos industriales."
+         data-en="The salt flats of Colima have been producing salt under the Pacific sun for centuries. Cuyumar is the purest expression of that legacy: naturally formed crystals, no additives, no industrial processes.">
+        Las salinas de Colima llevan siglos produciendo sal bajo el sol del Pacífico. Cuyumar es la expresión más pura de ese legado: cristales formados naturalmente, sin aditivos, sin procesos industriales.
+      </p>
+      <p class="origin-text"
+         data-es="Cada grano de Cuyumar lleva el sabor del Pacífico mexicano, rico en minerales traza que los océanos han concentrado durante milenios."
+         data-en="Every grain of Cuyumar carries the flavor of the Mexican Pacific, rich in trace minerals that the oceans have concentrated over millennia.">
+        Cada grano de Cuyumar lleva el sabor del Pacífico mexicano, rico en minerales traza que los océanos han concentrado durante milenios.
+      </p>
+      <div class="origin-stats">
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label" data-es="Natural" data-en="Natural">Natural</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">84+</div>
+          <div class="stat-label" data-es="Minerales" data-en="Minerals">Minerales</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">0</div>
+          <div class="stat-label" data-es="Aditivos" data-en="Additives">Aditivos</div>
+        </div>
+      </div>
+    </div>
+    <div class="origin-visual reveal-right">
+      <div class="origin-map-glow">
+        <span class="colima-label">Colima</span>
+        <div class="map-dot"></div>
+        <span class="coords">18.9224° N, 103.8979° W</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="parallax-stripe"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- BENEFITS                                    -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="benefits">
+  <div class="benefits-header reveal">
+    <p class="section-label" data-es="Por Qué Cuyumar" data-en="Why Cuyumar">Por Qué Cuyumar</p>
+    <h2 class="benefits-title">
+      <span data-es="La sal que tu"       data-en="The salt your">La sal que tu</span><br>
+      <em   data-es="cuerpo merece"       data-en="body deserves">cuerpo merece</em>
+    </h2>
+    <p class="benefits-lead"
+       data-es="Más que condimento — un alimento vivo."
+       data-en="More than a seasoning — a living food.">
+      Más que condimento — un alimento vivo.
+    </p>
+  </div>
+
+  <div class="benefits-grid">
+    <div class="benefit-card reveal delay-1">
+      <div class="benefit-number">01</div>
+      <span class="benefit-icon">⬡</span>
+      <div class="benefit-name" data-es="Rica en Minerales"   data-en="Mineral-Rich">Rica en Minerales</div>
+      <p class="benefit-desc"
+         data-es="Más de 84 minerales traza incluyendo magnesio, calcio y potasio. La sal industrial los elimina todos."
+         data-en="Over 84 trace minerals including magnesium, calcium, and potassium. Industrial salt strips them all out.">
+        Más de 84 minerales traza incluyendo magnesio, calcio y potasio. La sal industrial los elimina todos.
+      </p>
+      <span class="benefit-tag" data-es="Nutrición"  data-en="Nutrition">Nutrición</span>
+    </div>
+    <div class="benefit-card reveal delay-2">
+      <div class="benefit-number">02</div>
+      <span class="benefit-icon">◎</span>
+      <div class="benefit-name" data-es="Sin Procesar" data-en="Unprocessed">Sin Procesar</div>
+      <p class="benefit-desc"
+         data-es="Directamente de las salinas al empaque. Sin blanqueadores, sin antiaglomerantes, sin yodo artificial."
+         data-en="Directly from the salt flats to the package. No bleaching, no anti-caking agents, no artificial iodine.">
+        Directamente de las salinas al empaque. Sin blanqueadores, sin antiaglomerantes, sin yodo artificial.
+      </p>
+      <span class="benefit-tag" data-es="Pureza"     data-en="Purity">Pureza</span>
+    </div>
+    <div class="benefit-card reveal delay-3">
+      <div class="benefit-number">03</div>
+      <span class="benefit-icon">◈</span>
+      <div class="benefit-name" data-es="Sabor Superior" data-en="Superior Taste">Sabor Superior</div>
+      <p class="benefit-desc"
+         data-es="El perfil mineral complejo da una salinidad más suave, redonda y persistente. Los chefs la prefieren."
+         data-en="The complex mineral profile gives a softer, rounder, more persistent saltiness. Chefs prefer it.">
+        El perfil mineral complejo da una salinidad más suave, redonda y persistente. Los chefs la prefieren.
+      </p>
+      <span class="benefit-tag" data-es="Gastronomía" data-en="Gastronomy">Gastronomía</span>
+    </div>
+    <div class="benefit-card reveal delay-1">
+      <div class="benefit-number">04</div>
+      <span class="benefit-icon">◇</span>
+      <div class="benefit-name" data-es="Cosecha Responsable" data-en="Responsible Harvest">Cosecha Responsable</div>
+      <p class="benefit-desc"
+         data-es="Métodos tradicionales que respetan los ecosistemas costeros. Producción local que apoya comunidades de Colima."
+         data-en="Traditional methods that respect coastal ecosystems. Local production that supports Colima communities.">
+        Métodos tradicionales que respetan los ecosistemas costeros. Producción local que apoya comunidades de Colima.
+      </p>
+      <span class="benefit-tag" data-es="Sostenibilidad" data-en="Sustainability">Sostenibilidad</span>
+    </div>
+    <div class="benefit-card reveal delay-2">
+      <div class="benefit-number">05</div>
+      <span class="benefit-icon">◉</span>
+      <div class="benefit-name" data-es="Origen Certificado" data-en="Certified Origin">Origen Certificado</div>
+      <p class="benefit-desc"
+         data-es="100% Colima, México. Trazabilidad completa desde la salina hasta tu mesa. Garantizamos la procedencia."
+         data-en="100% Colima, Mexico. Complete traceability from salt flat to your table. We guarantee the provenance.">
+        100% Colima, México. Trazabilidad completa desde la salina hasta tu mesa. Garantizamos la procedencia.
+      </p>
+      <span class="benefit-tag" data-es="Certificación" data-en="Certification">Certificación</span>
+    </div>
+    <div class="benefit-card reveal delay-3">
+      <div class="benefit-number">06</div>
+      <span class="benefit-icon">○</span>
+      <div class="benefit-name" data-es="Versátil" data-en="Versatile">Versátil</div>
+      <p class="benefit-desc"
+         data-es="Para cocinar, curar carnes, beber en mezcal, margaritas y cocteles. Distintas granulometrías para cada uso."
+         data-en="For cooking, curing meats, drinking with mezcal, margaritas, and cocktails. Different grinds for every use.">
+        Para cocinar, curar carnes, beber en mezcal, margaritas y cocteles. Distintas granulometrías para cada uso.
+      </p>
+      <span class="benefit-tag" data-es="Versatilidad" data-en="Versatility">Versatilidad</span>
+    </div>
+  </div>
+</section>
+
+<div class="parallax-stripe"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- PRODUCTS                                    -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="products">
+  <div class="products-header">
+    <div class="reveal-left">
+      <p class="section-label" data-es="Nuestros Productos" data-en="Our Products">Nuestros Productos</p>
+      <h2 class="products-title">
+        <span data-es="Elige tu"  data-en="Choose your">Elige tu</span><br>
+        <em   data-es="Cuyumar"   data-en="Cuyumar">Cuyumar</em>
+      </h2>
+    </div>
+  </div>
+  <div class="products-track" id="productsGrid">
+    <!-- Products injected by main.js -->
+  </div>
+</section>
+
+<div class="parallax-stripe"></div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- ORDER                                       -->
+<!-- ═══════════════════════════════════════════ -->
+<section id="order">
+  <div class="order-left reveal-left">
+    <p class="section-label" data-es="Haz Tu Pedido" data-en="Place Your Order">Haz Tu Pedido</p>
+    <h2 class="order-title">
+      <span data-es="Fácil, rápido," data-en="Easy, fast,">Fácil, rápido,</span><br>
+      <em   data-es="a tu puerta"    data-en="to your door">a tu puerta</em>
+    </h2>
+    <p class="order-desc"
+       data-es="Usa nuestro asistente IA para hacer tu pedido, o escríbenos directamente. Envíos a toda la República Mexicana."
+       data-en="Use our AI assistant to place your order, or contact us directly. Shipping throughout Mexico.">
+      Usa nuestro asistente IA para hacer tu pedido, o escríbenos directamente. Envíos a toda la República Mexicana.
+    </p>
+    <ul class="order-features">
+      <li data-es="Envío express en 24-72 horas"              data-en="Express shipping in 24-72 hours">Envío express en 24-72 horas</li>
+      <li data-es="Empaque diseñado para proteger el producto" data-en="Packaging designed to protect the product">Empaque diseñado para proteger el producto</li>
+      <li data-es="Pedidos mínimos desde 250g"                data-en="Minimum orders from 250g">Pedidos mínimos desde 250g</li>
+      <li data-es="Precios especiales para mayoreo"           data-en="Special wholesale prices">Precios especiales para mayoreo</li>
+      <li data-es="Pago seguro por transferencia o en línea"  data-en="Secure payment by transfer or online">Pago seguro por transferencia o en línea</li>
+    </ul>
+  </div>
+  <div class="reveal-right" style="flex: 1;">
+    <div style="background: var(--ocean); padding: 48px; text-align: center;">
+      <p style="font-family:'Space Mono',monospace; font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--coral); margin-bottom:16px;"
+         data-es="ASISTENTE IA" data-en="AI ASSISTANT">ASISTENTE IA</p>
+      <p style="font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700; color:var(--salt); margin-bottom:12px;"
+         data-es="Haz clic en el chat" data-en="Click on the chat">Haz clic en el chat</p>
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--mist); line-height:1.6; margin-bottom:32px;"
+         data-es="Nuestro asistente Marina puede ayudarte a elegir el producto ideal, calcular tu pedido y resolver tus dudas."
+         data-en="Our assistant Marina can help you choose the ideal product, calculate your order, and answer your questions.">
+        Nuestro asistente Marina puede ayudarte a elegir el producto ideal, calcular tu pedido y resolver tus dudas.
+      </p>
+      <button class="btn-primary" onclick="openChat()" style="cursor:none;">
+        <span data-es="Hablar con Marina →" data-en="Talk to Marina →">Hablar con Marina →</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CONTACT / FOOTER                            -->
+<!-- ═══════════════════════════════════════════ -->
+<footer id="contact">
+  <div class="contact-brand reveal">
+    <div class="contact-logo">CUYUMAR</div>
+    <p class="contact-tagline"
+       data-es="Sal artesanal de Colima. Del Pacífico a tu mesa."
+       data-en="Artisan salt from Colima. From the Pacific to your table.">
+      Sal artesanal de Colima. Del Pacífico a tu mesa.
+    </p>
+  </div>
+  <div class="contact-col reveal delay-1">
+    <h4 data-es="NAVEGACIÓN" data-en="NAVIGATION">NAVEGACIÓN</h4>
+    <a href="#origin"   data-es="Nuestro Origen" data-en="Our Origin">Nuestro Origen</a>
+    <a href="#benefits" data-es="Beneficios"     data-en="Benefits">Beneficios</a>
+    <a href="#products" data-es="Productos"      data-en="Products">Productos</a>
+  </div>
+  <div class="contact-col reveal delay-2">
+    <h4 data-es="CONTACTO" data-en="CONTACT">CONTACTO</h4>
+    <a href="mailto:contacto@cuyumar.com.mx">contacto@cuyumar.com.mx</a>
+    <a href="https://wa.me/528003272512" data-es="WhatsApp" data-en="WhatsApp">WhatsApp</a>
+    <p data-es="Colima, México" data-en="Colima, Mexico">Colima, México</p>
+  </div>
+  <div class="contact-col reveal delay-3">
+    <h4 data-es="REDES SOCIALES" data-en="SOCIAL MEDIA">REDES SOCIALES</h4>
+    <a href="#">@cuyumar.com.mx</a>
+    <a href="#" data-es="Instagram" data-en="Instagram">Instagram</a>
+    <a href="#" data-es="Facebook"  data-en="Facebook">Facebook</a>
+    <a href="#" data-es="TikTok"    data-en="TikTok">TikTok</a>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <span class="footer-copy"
+        data-es="© 2025 Cuyumar · Sal de Colima · Todos los derechos reservados"
+        data-en="© 2025 Cuyumar · Salt of Colima · All rights reserved">
+    © 2025 Cuyumar · Sal de Colima · Todos los derechos reservados
+  </span>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- AI CHAT                                     -->
+<!-- ═══════════════════════════════════════════ -->
+<button id="chat-btn" onclick="toggleChat()"
+        aria-label="Abrir asistente de chat Marina"
+        aria-expanded="false">
+  <div class="pulse-ring"></div>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+       stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+</button>
+
+<div id="chat-panel">
+  <div class="chat-header">
+    <div class="chat-avatar">🧂</div>
+    <div>
+      <div class="chat-title">Marina</div>
+      <div class="chat-status" data-es="Asistente Cuyumar" data-en="Cuyumar Assistant">Asistente Cuyumar</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="quick-replies" id="quickReplies"></div>
+  <div class="chat-input-area">
+    <input class="chat-input" id="chatInput" type="text"
+           placeholder="Escribe tu mensaje..."
+           onkeydown="if(event.key==='Enter') sendMessage()">
+    <button class="chat-send" onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CART MODAL                                  -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="cart-modal" onclick="closeCartOutside(event)">
+  <div class="cart-panel">
+    <div class="cart-panel-header">
+      <div class="cart-panel-title" data-es="Tu Carrito" data-en="Your Cart">Tu Carrito</div>
+      <button class="cart-panel-close" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span class="cart-total-label" data-es="TOTAL" data-en="TOTAL">TOTAL</span>
+        <span class="cart-total-amount" id="cartTotal">$0 MXN</span>
+      </div>
+      <button class="cart-checkout-btn" onclick="checkout()">
+        <span data-es="Proceder al Pago →" data-en="Proceed to Checkout →">Proceder al Pago →</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Scripts (order matters: main → cart → chat) ─── -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/cart.js"></script>
+<script src="assets/js/chat.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+/* ─── DESIGN TOKENS ─── */
+:root {
+  --sand:        #F2E8D9;
+  --salt:        #FAFAF7;
+  --ocean:       #1A3A4A;
+  --deep:        #0D2030;
+  --coral:       #C4622D;
+  --gold:        #CA8A04;  /* brighter gold — improved from #B8860B */
+  --foam:        #E8F0ED;
+  --mist:        #8FA8B2;
+  --text:        #1A1A18;
+  --accent:      #C4622D;
+  --text-muted:  #4A6272;  /* replaces opacity hacks — 5.2:1 on --salt */
+  --text-dim:    #5E7A8A;  /* for secondary text — 4.6:1 on --salt */
+
+  /* Z-index scale */
+  --z-base:     10;
+  --z-overlay:  200;
+  --z-nav:      500;
+  --z-progress: 600;
+  --z-chat:     800;
+  --z-modal:    900;
+  --z-cursor:   9999;
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background: var(--sand);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ─── NOISE TEXTURE OVERLAY ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ─── CUSTOM CURSOR ─── */
+.cursor {
+  position: fixed;
+  width: 12px; height: 12px;
+  background: var(--coral);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+  mix-blend-mode: multiply;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 40px; height: 40px;
+  border: 1px solid var(--coral);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease;
+  opacity: 0.6;
+}
+
+.cursor.expanded  { width: 24px; height: 24px; }
+.cursor-ring.expanded { width: 60px; height: 60px; }
+
+/* ─── SCROLL PROGRESS BAR ─── */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--coral), var(--gold));
+  z-index: 600;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
+/* ─── UTILITY BUTTONS ─── */
+.btn-primary {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--ocean);
+  color: var(--sand);
+  padding: 16px 36px;
+  border: none;
+  cursor: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--coral);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover::before { transform: translateX(0); }
+.btn-primary span { position: relative; z-index: 1; }
+
+.btn-ghost {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: none;
+  color: var(--ocean);
+  padding: 16px 36px;
+  border: 1px solid var(--ocean);
+  cursor: none;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-ghost:hover {
+  background: var(--ocean);
+  color: var(--sand);
+}
+
+/* ─── SECTION LABEL ─── */
+.section-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 20px;
+}
+
+/* ─── ACCESSIBILITY: FOCUS STYLES ─── */
+:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+/* Buttons remove native outline but keep custom one above */
+button { outline: none; }
+button:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
+
+/* ─── ACCESSIBILITY: SKIP LINK ─── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--ocean);
+  color: var(--salt);
+  padding: 8px 16px;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  z-index: var(--z-cursor);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+/* ─── SCREEN READER ONLY ─── */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+

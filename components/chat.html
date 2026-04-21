@@ -1,0 +1,35 @@
+<!-- AI CHAT COMPONENTS — partial reference
+     Requires: chat.js, cart.js, main.js
+     Marina is the AI assistant powered by Claude (claude-sonnet-4-20250514)
+     API calls go to https://api.anthropic.com/v1/messages
+     Note: for production, proxy through a server-side endpoint to protect the API key
+-->
+
+<!-- Floating chat button -->
+<button id="chat-btn" onclick="toggleChat()">
+  <div class="pulse-ring"></div>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+       stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+  </svg>
+</button>
+
+<!-- Chat panel -->
+<div id="chat-panel">
+  <div class="chat-header">
+    <div class="chat-avatar">🧂</div>
+    <div>
+      <div class="chat-title">Marina</div>
+      <div class="chat-status" data-es="Asistente Cuyumar" data-en="Cuyumar Assistant">Asistente Cuyumar</div>
+    </div>
+    <button class="chat-close" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages"></div>
+  <div class="quick-replies" id="quickReplies"></div>
+  <div class="chat-input-area">
+    <input class="chat-input" id="chatInput" type="text"
+           placeholder="Escribe tu mensaje..."
+           onkeydown="if(event.key==='Enter') sendMessage()">
+    <button class="chat-send" onclick="sendMessage()">➤</button>
+  </div>
+</div>
